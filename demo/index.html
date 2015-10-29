@@ -25,7 +25,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         backhground: white;
         overflow-x: hidden;
         overflow-y: scroll;
+        padding: 1em;
         border: 2px inset silver;
+        border-radius: 3px;
+        box-sizing: border-box;
       }
       div#output p {
         margin: 0px;
@@ -50,8 +53,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       function shuffle() {
         var dBar = document.getElementById("dbar1");
-        dBar.width = 800;
-        dBar.minpartwidth = 50;
         dBar.values = [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100];
         dBar.texts = [
           "" + Math.round(dBar.values[0]) + " foo",
@@ -64,10 +65,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <p><button id="shuffle" onclick="shuffle()">Shuffle</button></p>
 
-    <apolylump-dbar id="dbar1" class="clickable"></apolylump-dbar>
-    <apolylump-dbar id="dbar2" values="[12,14]" texts='["no","yes"]' width="300" minpartwidth="30"></apolylump-dbar>
+    <apolylump-dbar id="dbar1" values="[0,0,0,0]" width="800" minpartwidth="50" class="clickable"></apolylump-dbar>
+    <apolylump-dbar id="dbar2" values="[8,14]" texts='["no","yes"]' width="300" minpartwidth="30"></apolylump-dbar>
     <apolylump-dbar id="dbar3" values="[3,23,1,0,12.5,7,14,3,6.61]" width="800" minpartwidth="25" on-partclick="foobar"></apolylump-dbar>
 
-    <div id="output"></div>
+    <div id="output">
+      <p>Clicking the first distribution bar will add event info here...</p>
+    </div>
   </body>
 </html>
