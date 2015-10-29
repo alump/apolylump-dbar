@@ -1,0 +1,27 @@
+{
+  "name": "apolylump-dbar",
+  "version": "1.0.3",
+  "authors": [
+    "Sami Viitanen <sami.viitanen@gmail.com>"
+  ],
+  "description": "Distribution Bar Polymer element",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "apolylump-dbar.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/alump/apolylump-dbar/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

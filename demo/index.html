@@ -1,0 +1,74 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>apolylump-dbar Demo</title>
+    <script src="../bower_components//webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bower_components/polymer/polymer.html"/>
+    <link rel="import" href="../apolylump-dbar.html">
+    <style>
+      div#output {
+        font-family: monospace;
+        height: 200px;
+        width: 600px;
+        margin-top: 20px;
+        color: black;
+        backhground: white;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        border: 2px inset silver;
+      }
+      div#output p {
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body unresolved>
+
+    <p>An example of <code>&lt;apolylump-dbar&gt;</code>:</p>
+
+    <script>
+      window.addEventListener("WebComponentsReady", function(e) {
+        document.getElementById("dbar1").addEventListener("partclick", function(e) {
+          var outputElement = document.getElementById("output");
+          var value = e.detail.value;
+          var text = e.detail.text ? e.detail.text : value;
+          var msg = "Part '" + text + "' (" + value + ") clicked at " + e.detail.event.x + ":" + e.detail.event.y;
+          outputElement.innerHTML = outputElement.innerHTML + "<p>" + msg + "</p>";
+          outputElement.scrollTop = outputElement.scrollHeight;
+        });
+      });
+
+      function shuffle() {
+        var dBar = document.getElementById("dbar1");
+        dBar.width = 800;
+        dBar.minpartwidth = 50;
+        dBar.values = [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100];
+        dBar.texts = [
+          "" + Math.round(dBar.values[0]) + " foo",
+          "" + Math.round(dBar.values[1]) + " bar",
+          "" + Math.round(dBar.values[2]) + " lorem ipsum",
+          "" + Math.round(dBar.values[3]) + " Diipa daapa juupa joo"];
+        console.log("values after: " + dBar.values);
+      }
+    </script>
+
+    <p><button id="shuffle" onclick="shuffle()">Shuffle</button></p>
+
+    <apolylump-dbar id="dbar1" class="clickable"></apolylump-dbar>
+    <apolylump-dbar id="dbar2" values="[12,14]" texts='["no","yes"]' width="300" minpartwidth="30"></apolylump-dbar>
+    <apolylump-dbar id="dbar3" values="[3,23,1,0,12.5,7,14,3,6.61]" width="800" minpartwidth="25" on-partclick="foobar"></apolylump-dbar>
+
+    <div id="output"></div>
+  </body>
+</html>
