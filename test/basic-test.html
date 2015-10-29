@@ -30,23 +30,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       suite('<apolylump-dbar>', function() {
 
         test('defines the "author" property', function() {
-          assert.equal(myEl.author.name, 'Dimitri Glazkov');
-          assert.equal(myEl.author.image, 'http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg');
+          assert.equal(myEl.author.name, 'Sami Viitanen');
         });
 
-        test('says hello', function() {
-          assert.equal(myEl.sayHello(), 'apolylump-dbar says, Hello World!');
-
-          var greetings = myEl.sayHello('greetings Earthlings');
-          assert.equal(greetings, 'apolylump-dbar says, greetings Earthlings');
-        });
-
-        test('fires lasers', function(done) {
-          myEl.addEventListener('apolylump-dbar-lasers', function(event) {
-            assert.equal(event.detail.sound, 'Pew pew!');
-            done();
-          });
-          myEl.fireLasers();
+        test('keeps values', function() {
+          var values = [1,2,3];
+          myEl.values = values;
+          assert.equal(myEl.values, values);
         });
 
       });
