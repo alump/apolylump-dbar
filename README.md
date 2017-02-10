@@ -2,6 +2,10 @@
 
 An element providing a starting point for your own reusable Polymer elements.
 
+## Change Log
+### 0.1.0 2017-02-10
+0.0.4 did not work with current polymer, fixed issues
+
 
 ## Dependencies
 

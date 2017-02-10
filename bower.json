@@ -1,6 +1,6 @@
 {
   "name": "apolylump-dbar",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "authors": [
     "Sami Viitanen <sami.viitanen@gmail.com>"
   ],
@@ -18,10 +18,10 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0"
+    "polymer": "Polymer/polymer#^1.4.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.0",
     "web-component-tester": "*"
   }
 }
