@@ -1,5 +1,13 @@
 # apolylump-dbar
 
+This element has been replaced by: https://github.com/alump/alump-dbar
+
+
+
+
+
+
+
 An element providing a starting point for your own reusable Polymer elements.
 
 ## Change Log
